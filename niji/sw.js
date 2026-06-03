@@ -1,4 +1,4 @@
-const CACHE_NAME = 'v3-cache-quadratic';
+const CACHE_NAME = 'v4-cache-quadratic'; // v3 から v4 にアップ
 const ASSETS = [
   './',
   './index.html',
@@ -28,7 +28,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// ネットワークファースト戦略（常に最新を追尾、オフライン時のみキャッシュ）
+// ネットワークファースト戦略
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(event.request)

@@ -70,11 +70,18 @@
             transition: all 0.1s ease;
             user-select: none;
             -webkit-user-select: none;
+            color: #333333;
         }
         .option-btn:active {
             transform: translateY(3px);
             box-shadow: 0 1px 0 #e2e8f0;
         }
+        
+        /* 【修正】MathJaxの数式がスマホ環境で水色（システムカラー）になるのを強制防止 */
+        mjx-container {
+            color: #333333;
+        }
+
         .result {
             margin-top: 15px;
             font-size: 1.1rem;
@@ -110,7 +117,6 @@
     let currentQuestion = { a: 0, b: 0, c: 0, aState: '', bState: '', cState: '' };
     let currentPhase = 0; 
 
-    // 【修正】正は赤太字、負は青太字。確定したパーツは黒太字で引き継ぐ
     const phases = [
         {
             getOptions: (q) => [
@@ -189,7 +195,6 @@
         }
     }
 
-    // 【修正】○ と × のマークを追加
     function checkAnswer(selectedId) {
         const phaseData = phases[currentPhase];
         const correctId = phaseData.getCorrectId(currentQuestion);
@@ -252,7 +257,6 @@
         ctx.stroke();
     }
 
-    // サービスワーカーの登録処理
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('./sw.js')
