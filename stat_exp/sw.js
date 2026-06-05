@@ -1,5 +1,5 @@
 // キャッシュ名
-const CACHE_NAME = 'exponential-dist-v1';
+const CACHE_NAME = 'exponential-dist-v2';
 // キャッシュするリソースのリスト
 
 const urlsToCache = [

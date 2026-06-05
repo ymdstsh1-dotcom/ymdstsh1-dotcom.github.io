@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>指数分布マスター</title>
     <link rel="manifest" href="./manifest.json">
-    <link rel="apple-touch-icon" href="./icon192.png"> <link rel="icon" href="./icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./icon192.png">
     <link rel="icon" href="./icon.svg" type="image/svg+xml">
     <meta name="theme-color" content="#007bff">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -85,17 +85,25 @@
             margin-bottom: 10px;
             line-height: 1.6;
         }
+        
+        /* 問題文の2行目（数式など）を1.2倍にするスタイル */
+        .formula-line {
+            font-size: 1.2em;
+            display: inline-block;
+        }
+        
+        /* 参考テキストも1.2倍に調整 */
         .reference-text {
             display: inline-block;
             margin-top: 10px;
             padding: 8px;
             background: #f8f9fa;
             border-left: 4px solid #007bff;
-            font-size: 1rem;
+            font-size: 1.2em;
             color: #444;
         }
 
-        /* フィードバックエリア（高さを固定してガタつきを抑止、選択肢の上を維持） */
+        /* フィードバックエリア */
         .feedback {
             height: 30px;
             line-height: 30px;
@@ -251,17 +259,17 @@
         // --- タイプ1: x (Index 0-5) ---
         {
             title: "タイプ1 (x): 第1問",
-            text: "確率密度関数が、次のようになるのは？<br><br> \\( \\displaystyle e^{-x} \\times \\text{(正の定数)} \\)",
+            text: "確率密度関数が、次のようになるのは？<br><br><span class='formula-line'>\\( \\displaystyle e^{-x} \\times \\text{(正の定数)} \\)</span>",
             options: [ {t: "正規分布", c: false}, {t: "ポアソン分布", c: false}, {t: "指数分布", c: true}, {t: "ベータ分布", c: false} ]
         },
         {
             title: "タイプ1 (x): 第2問",
-            text: "ふつう、\\( x \\)の範囲は？<br><br> \\( \\displaystyle e^{-x} \\times \\text{(正の定数)} \\)",
+            text: "ふつう、\\( x \\)の範囲は？<br><br><span class='formula-line'>\\( \\displaystyle e^{-x} \\times \\text{(正の定数)} \\)</span>",
             options: [ {t: "0 ～ \\( \\infty \\)", c: true}, {t: "\\( -\\infty \\) ～ \\( \\infty \\)", c: false}, {t: "1 ～ \\( \\infty \\)", c: false}, {t: "0 ～ 1", c: false} ]
         },
         {
             title: "タイプ1 (x): 第3問",
-            text: "次の積分は？<br><br> \\( \\displaystyle \\int_{0}^{\\infty} e^{-x} dx \\)",
+            text: "次の積分は？<br><br><span class='formula-line'>\\( \\displaystyle \\int_{0}^{\\infty} e^{-x} dx \\)</span>",
             options: [ {t: "\\( 1 \\)", c: true}, {t: "\\( 0 \\)", c: false}, {t: "\\( \\infty \\)（発散）", c: false} ]
         },
         {
@@ -271,29 +279,29 @@
         },
         {
             title: "タイプ1 (x): 第5問",
-            text: "期待値 \\( \\mathrm{E}[X] \\) は？<br><br> 確率密度関数は \\( \\displaystyle f(x) = e^{-x} \\)",
+            text: "期待値 \\( \\mathrm{E}[X] \\) は？<br><br><span class='formula-line'>確率密度関数は \\( \\displaystyle f(x) = e^{-x} \\)</span>",
             options: [ {t: "\\( 1 \\)", c: true}, {t: "\\( 0 \\)", c: false}, {t: "\\( \\infty \\)（発散）", c: false} ]
         },
         {
             title: "タイプ1 (x): 第6問",
-            text: "分散 \\( \\mathrm{Var}(X) \\) は？<br><br> 確率密度関数は \\( \\displaystyle f(x) = e^{-x} \\)",
+            text: "分散 \\( \\mathrm{Var}(X) \\) は？<br><br><span class='formula-line'>確率密度関数は \\( \\displaystyle f(x) = e^{-x} \\)</span>",
             options: [ {t: "\\( 1 \\)", c: true}, {t: "\\( 0 \\)", c: false}, {t: "\\( \\infty \\)（発散）", c: false} ]
         },
 
         // --- タイプ2: λx (Index 6-11) ---
         {
             title: "タイプ2 (λx): 第1問",
-            text: "確率密度関数が、次のようになるのは？<br><br> \\( \\displaystyle e^{-\\lambda x} \\times \\text{(正の定数)} \\)",
+            text: "確率密度関数が、次のようになるのは？<br><br><span class='formula-line'>\\( \\displaystyle e^{-\\lambda x} \\times \\text{(正の定数)} \\)</span>",
             options: [ {t: "指数分布", c: true}, {t: "ポアソン分布", c: false}, {t: "二項分布", c: false}, {t: "ベータ分布", c: false} ]
         },
         {
             title: "タイプ2 (λx): 第2問",
-            text: "ふつう、\\( x \\)の範囲は？<br><br> \\( \\displaystyle e^{-\\lambda x} \\times \\text{(正の定数)} \\)",
+            text: "ふつう、\\( x \\)の範囲は？<br><br><span class='formula-line'>\\( \\displaystyle e^{-\\lambda x} \\times \\text{(正の定数)} \\)</span>",
             options: [ {t: "0 ～ \\( \\infty \\)", c: true}, {t: "\\( -\\infty \\) ～ \\( \\infty \\)", c: false}, {t: "1 ～ \\( \\infty \\)", c: false}, {t: "0 ～ 1", c: false} ]
         },
         {
             title: "タイプ2 (λx): 第3問",
-            text: "次の積分は？<br><br> \\( \\displaystyle \\int_{0}^{\\infty} e^{-\\lambda x} dx \\)",
+            text: "次の積分は？<br><br><span class='formula-line'>\\( \\displaystyle \\int_{0}^{\\infty} e^{-\\lambda x} dx \\)</span>",
             options: [ {t: "\\( 1 \\)", c: false}, {t: "\\( \\lambda \\)", c: false}, {t: "\\( \\displaystyle \\frac{1}{\\lambda} \\)", c: true}, {t: "\\( \\infty \\)（発散）", c: false} ]
         },
         {
@@ -303,44 +311,44 @@
         },
         {
             title: "タイプ2 (λx): 第5問",
-            text: "期待値 \\( \\mathrm{E}[X] \\) は？<br><br> 確率密度関数は \\( \\displaystyle f(x) = \\lambda e^{-\\lambda x} \\)",
+            text: "期待値 \\( \\mathrm{E}[X] \\) は？<br><br><span class='formula-line'>確率密度関数は \\( \\displaystyle f(x) = \\lambda e^{-\\lambda x} \\)</span>",
             options: [ {t: "\\( 1 \\)", c: false}, {t: "\\( \\lambda \\)", c: false}, {t: "\\( \\displaystyle \\frac{1}{\\lambda} \\)", c: true}, {t: "\\( \\infty \\)（発散）", c: false} ]
         },
         {
             title: "タイプ2 (λx): 第6問",
-            text: "分散 \\( \\mathrm{Var}(X) \\) は？<br><br> 確率密度関数は \\( \\displaystyle f(x) = \\lambda e^{-\\lambda x} \\)",
+            text: "分散 \\( \\mathrm{Var}(X) \\) は？<br><br><span class='formula-line'>確率密度関数は \\( \\displaystyle f(x) = \\lambda e^{-\\lambda x} \\)</span>",
             options: [ {t: "\\( 1 \\)", c: false}, {t: "\\( \\lambda^2 \\)", c: false}, {t: "\\( \\displaystyle \\frac{1}{\\lambda^2} \\)", c: true}, {t: "\\( \\infty \\)（発散）", c: false} ]
         },
 
-        // --- タイプ3: x/β (Index 12-17) ---
+        // --- タイプ3: x/β (Index 12-17) [指数の縮小を防ぐため e^{\\displaystyle ...} を適用] ---
         {
             title: "タイプ3 (x/β): 第1問",
-            text: "確率密度関数が、次のようになるのは？<br><br> \\( \\displaystyle e^{-\\frac{x}{\\beta}} \\times \\text{(正の定数)} \\)",
+            text: "確率密度関数が、次のようになるのは？<br><br><span class='formula-line'>\\( \\displaystyle e^{\\displaystyle -\\frac{x}{\\beta}} \\times \\text{(正の定数)} \\)</span>",
             options: [ {t: "一様分布", c: false}, {t: "指数分布", c: true}, {t: "幾何分布", c: false}, {t: "ベータ分布", c: false} ]
         },
         {
             title: "タイプ3 (x/β): 第2問",
-            text: "ふつう、\\( x \\)の範囲は？<br><br> \\( \\displaystyle e^{-\\frac{x}{\\beta}} \\times \\text{(正の定数)} \\)",
+            text: "ふつう、\\( x \\)の範囲は？<br><br><span class='formula-line'>\\( \\displaystyle e^{\\displaystyle -\\frac{x}{\\beta}} \\times \\text{(正の定数)} \\)</span>",
             options: [ {t: "0 ～ \\( \\infty \\)", c: true}, {t: "\\( -\\infty \\) ～ \\( \\infty \\)", c: false}, {t: "1 ～ \\( \\infty \\)", c: false}, {t: "0 ～ 1", c: false} ]
         },
         {
             title: "タイプ3 (x/β): 第3問",
-            text: "次の積分は？<br><br> \\( \\displaystyle \\int_{0}^{\\infty} e^{-\\frac{x}{\\beta}} dx \\)",
+            text: "次の積分は？<br><br><span class='formula-line'>\\( \\displaystyle \\int_{0}^{\\infty} e^{\\displaystyle -\\frac{x}{\\beta}} dx \\)</span>",
             options: [ {t: "\\( 1 \\)", c: false}, {t: "\\( \\beta \\)", c: true}, {t: "\\( \\displaystyle \\frac{1}{\\beta} \\)", c: false}, {t: "\\( \\infty \\)（発散）", c: false} ]
         },
         {
             title: "タイプ3 (x/β): 第4問",
-            text: "確率密度関数 \\( f(x) \\) は？<br><br><span class='reference-text'>参考：\\( \\displaystyle \\int_{0}^{\\infty} e^{-\\frac{x}{\\beta}} dx = \\beta \\)</span>",
-            options: [ {t: "\\( \\displaystyle f(x) = \\frac{1}{\\beta} e^{-\\frac{x}{\\beta}} \\)", c: true}, {t: "\\( \\displaystyle f(x) = \\beta e^{-\\frac{x}{\\beta}} \\)", c: false}, {t: "\\( \\displaystyle f(x) = e^{-\\frac{x}{\\beta}} \\)", c: false}, {t: "\\( f(x) = 0 \\)", c: false} ]
+            text: "確率密度関数 \\( f(x) \\) は？<br><br><span class='reference-text'>参考：\\( \\displaystyle \\int_{0}^{\\infty} e^{\\displaystyle -\\frac{x}{\\beta}} dx = \\beta \\)</span>",
+            options: [ {t: "\\( \\displaystyle f(x) = \\frac{1}{\\beta} e^{\\displaystyle -\\frac{x}{\\beta}} \\)", c: true}, {t: "\\( \\displaystyle f(x) = \\beta e^{\\displaystyle -\\frac{x}{\\beta}} \\)", c: false}, {t: "\\( \\displaystyle f(x) = e^{\\displaystyle -\\frac{x}{\\beta}} \\)", c: false}, {t: "\\( f(x) = 0 \\)", c: false} ]
         },
         {
             title: "タイプ3 (x/β): 第5問",
-            text: "期待値 \\( \\mathrm{E}[X] \\) は？<br><br> 確率密度関数は \\( \\displaystyle f(x) = \\frac{1}{\\beta} e^{-\\frac{x}{\\beta}} \\)",
+            text: "期待値 \\( \\mathrm{E}[X] \\) は？<br><br><span class='formula-line'>確率密度関数は \\( \\displaystyle f(x) = \\frac{1}{\\beta} e^{\\displaystyle -\\frac{x}{\\beta}} \\)</span>",
             options: [ {t: "\\( 1 \\)", c: false}, {t: "\\( \\beta \\)", c: true}, {t: "\\( \\displaystyle \\frac{1}{\\beta} \\)", c: false}, {t: "\\( \\infty \\)（発散）", c: false} ]
         },
         {
             title: "タイプ3 (x/β): 第6問",
-            text: "分散 \\( \\mathrm{Var}(X) \\) は？<br><br> 確率密度関数は \\( \\displaystyle f(x) = \\frac{1}{\\beta} e^{-\\frac{x}{\\beta}} \\)",
+            text: "分散 \\( \\mathrm{Var}(X) \\) は？<br><br><span class='formula-line'>確率密度関数は \\( \\displaystyle f(x) = \\frac{1}{\\beta} e^{\\displaystyle -\\frac{x}{\\beta}} \\)</span>",
             options: [ {t: "\\( 1 \\)", c: false}, {t: "\\( \\beta^2 \\)", c: true}, {t: "\\( \\displaystyle \\frac{1}{\\beta^2} \\)", c: false}, {t: "\\( \\infty \\)（発散）", c: false} ]
         }
     ];
@@ -376,7 +384,6 @@
             }
         }
         else if (mode === 'wrong_retry') {
-            // 前回の結果を一時保存し、results配列を完全に初期化（空欄化）する
             const prevResults = [...results];
             results = Array(18).fill(null);
             sequence = [];
@@ -397,7 +404,6 @@
         const actualIndex = sequence[currentStep];
         const q = questions[actualIndex];
         
-        // 進捗バーとテキストの更新
         const progressPercent = (currentStep / sequence.length) * 100;
         document.getElementById('progress-bar').style.width = `${progressPercent}%`;
         document.getElementById('q-progress').innerText = `(${currentStep + 1}/${sequence.length})`;
@@ -485,7 +491,7 @@
         const types = [
             "\\( \\displaystyle f(x) = e^{-x} \\)",
             "\\( \\displaystyle f(x) = \\lambda e^{-\\lambda x} \\)",
-            "\\( \\displaystyle f(x) = \\frac{1}{\\beta} e^{-\\frac{x}{\\beta}} \\)"
+            "\\( \\displaystyle f(x) = \\frac{1}{\\beta} e^{\\displaystyle -\\frac{x}{\\beta}} \\)"
         ];
 
         let wrongCount = 0;
@@ -509,7 +515,6 @@
                 } else if (res === 'skipped') {
                     td.innerHTML = '<span class="mark-skip">ー</span>';
                 } else {
-                    // 今回答えていない問題（対象外の問題など）は完全に空欄にする
                     td.innerHTML = '';
                 }
                 tr.appendChild(td);
